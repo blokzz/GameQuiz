@@ -33,10 +33,10 @@ export default function Home() {
     <main className="flex h-lvh flex-col items-center p-16">
       <h1 className="text-2xl">Game Quiz</h1>
       <div className="flex flex-row items-center w-5/6 h-full gap-3 mt-5">
-        {data.map(col => (
-          <div className="h-full w-full flex flex-col">
+        {data.map((col, index )=> (
+          <div key={index} className="h-full w-full flex flex-col">
             <span className="justify-center items-center flex">{col.category}</span>
-            <Coulumn key={col?.gameid} game={col} 
+            <Coulumn  game={col} 
             player1points={setPlayerOnePoints} 
             player2points={setPlayerTwoPoints} 
             flippedCell={flippedCell} 

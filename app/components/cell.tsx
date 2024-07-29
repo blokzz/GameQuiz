@@ -79,7 +79,7 @@ const Cell: React.FC<CellProps> = ({ point, revealed , playeronepoints , playert
   }
 
   return (
-    <div
+    <div key={revealed}
     onClick={handleClick}
     className={`w-full p-2 flex flex-col items-center justify-center border-2 rounded-sm border-gray-300 relative transition-transform duration-500 bg-gray-800 ${
       flipped ? 'rotate-y-180' : ''

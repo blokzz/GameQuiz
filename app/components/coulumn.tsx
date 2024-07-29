@@ -11,14 +11,15 @@ interface CoulumnProps {
   setchosenplayer:React.Dispatch<React.SetStateAction<string>>;
   showModal:React.Dispatch<React.SetStateAction<boolean>>;
   setCurrentQuestion:React.Dispatch<React.SetStateAction<string>>;
+
   
 }
-const Coulumn: FC<CoulumnProps> = ({ game ,player1points , player2points , flippedCell , setFlippedCell , chooseplayer , setchosenplayer , showModal ,setCurrentQuestion}) => {
+const Coulumn: FC<CoulumnProps> = ({  game ,player1points , player2points , flippedCell , setFlippedCell , chooseplayer , setchosenplayer , showModal ,setCurrentQuestion}) => {
     return (
-      <div className="flex flex-row flex-wrap w-full h-full">
+      <div  className="flex flex-row flex-wrap w-full h-full">
          <ul className="flex flex-row flex-wrap w-full h-full gap-3">
         {Object.entries(game.questions).map(([points, question]) => (
-         <Cell point={Number(points)} revealed={question} 
+         <Cell key={question} point={Number(points)} revealed={question} 
          playeronepoints={player1points} 
          playertwopoints={player2points} 
          flippedCell={flippedCell} 
